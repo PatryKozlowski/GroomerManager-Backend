@@ -1,6 +1,9 @@
 namespace GroomerManager.Application.Common.Abstraction;
 
-public class BaseQueryHandler
+public abstract class BaseQueryHandler
 {
-    
+    public BaseQueryHandler()
+    {
+        
+    }
 }

@@ -1,6 +1,8 @@
 namespace GroomerManager.Application.Common.Abstraction;
 
-public class BaseCommandHandler
+public abstract class BaseCommandHandler
 {
-    
+    public BaseCommandHandler()
+    {
+    }
 }

@@ -1,6 +1,5 @@
 namespace GroomerManager.Application.Common.Exceptions;
 
-public class UnauthorizedException
+public class UnauthorizedException(string message = "Unauthorized") : Exception(message)
 {
-    
 }
