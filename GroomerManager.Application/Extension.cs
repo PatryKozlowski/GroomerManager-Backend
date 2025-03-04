@@ -1,6 +1,8 @@
 ﻿using FluentValidation;
 using GroomerManager.Application.Common.Abstraction;
 using GroomerManager.Application.Common.Behaviors;
+using GroomerManager.Application.Common.Interfaces;
+using GroomerManager.Application.Common.Services;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,6 +14,7 @@ public static class Extension
     {
         services.AddCQRS();
         services.AddValidators();
+        services.AddScoped<ICurrentSalonProvider, CurrentSalonProvider>();
         return services;
     }
     

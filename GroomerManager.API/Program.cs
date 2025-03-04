@@ -1,3 +1,4 @@
+using GroomerManager.API.Auth;
 using GroomerManager.API.Exception;
 using GroomerManager.Application;
 using GroomerManager.Infrastructure;
@@ -14,6 +15,8 @@ builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddOpenApi();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddAuth(builder.Configuration);
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

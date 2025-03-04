@@ -2,3 +2,5 @@
 *obj
 *bin
 *appsettings.local.Development.json
+*Migrations
+*.DS_Store
