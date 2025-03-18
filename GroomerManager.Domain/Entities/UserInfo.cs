@@ -6,6 +6,7 @@ namespace GroomerManager.Domain.Entities;
 public class UserInfo : BaseEntity
 {
     public required UserName UserName { get; set; }
+    public required string Phone { get; set; }
     public Guid UserId { get; set; }
     public required User User { get; set; }
 }

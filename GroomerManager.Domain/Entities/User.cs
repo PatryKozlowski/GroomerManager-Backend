@@ -7,6 +7,7 @@ public class User : BaseEntity
     public required string Email { get; set; }
     public required string Password { get; set; }
     public required UserInfo UserInfo { get; set; }
+    public bool IsEmailConfirmed { get; set; }  
     public Guid RoleId { get; set; }
     public required Role Role { get; set; }
     public required RefreshToken RefreshToken { get; set; }

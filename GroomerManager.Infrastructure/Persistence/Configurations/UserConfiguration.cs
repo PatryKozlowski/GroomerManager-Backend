@@ -12,8 +12,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .HasForeignKey<RefreshToken>(rt => rt.UserId);
         
         builder.HasOne(u => u.Role)
-            .WithOne(r => r.User)
-            .HasForeignKey<User>(u => u.RoleId);
+            .WithMany(r => r.Users)  
+            .HasForeignKey(u => u.RoleId);
             
         builder.HasOne(u => u.UserInfo)
             .WithOne(ui => ui.User)

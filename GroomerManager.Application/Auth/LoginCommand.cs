@@ -48,6 +48,11 @@ public abstract class LoginCommand
             {
                 throw new ErrorException("InvalidEmailOrPassword");
             }
+            
+            if (!user.IsEmailConfirmed)
+            {
+                throw new ErrorException("NotConfirmedEmail");
+            }
 
             if (_passwordManager.VerifyPassword(user.Password, request.Password))
             {

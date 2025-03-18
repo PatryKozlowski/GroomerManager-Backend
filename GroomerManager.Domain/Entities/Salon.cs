@@ -5,8 +5,8 @@ namespace GroomerManager.Domain.Entities;
 public class Salon : BaseEntity
 {
     public required string Name { get; set; }
-    public required string LogoPath { get; set; }
-    public required Guid LogoId { get; set; }
+    public string? LogoPath { get; set; }
+    public  Guid? LogoId { get; set; }
     public required bool IsDefault { get; set; }
     public string? Address { get; set; }
     public Guid OwnerId { get; set; }

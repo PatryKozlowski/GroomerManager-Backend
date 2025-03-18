@@ -31,7 +31,7 @@ public class CurrentSalonProvider : ICurrentSalonProvider
         return null;
     }
 
-    public async Task<Salon> GetAuthenticatedSalon(Guid salonId)
+    public async Task<Domain.Entities.Salon> GetAuthenticatedSalon(Guid salonId)
     {
         var userId = _authenticationData.GetUserId();
 

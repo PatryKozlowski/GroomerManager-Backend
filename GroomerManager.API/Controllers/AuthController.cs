@@ -31,9 +31,18 @@ public class AuthController : BaseController
         SetTokenCookie(result.RefreshToken, true);
         return Ok(result);
     }
-    
+
     [HttpPost]
-    public async Task<ActionResult<GeneratePasswordCommand.GeneratePasswordResponse>> GeneratePassword([FromBody] GeneratePasswordCommand.GeneratePasswordRequest request)
+    public async Task<ActionResult<CreateUserWithSalonCommand.CreateUserWithSalonResponse>> Create(
+        [FromBody] CreateUserWithSalonCommand.CreateUserWithSalonRequest request)
+    {
+        var result = await _mediator.Send(request);
+        return Ok(result);
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<NewConfirmEmailTokenCommand.NewConfirmEmailTokenResponse>> NewVerifyEmail(
+        [FromBody] NewConfirmEmailTokenCommand.NewConfirmEmailTokenRequest request)
     {
         var result = await _mediator.Send(request);
         return Ok(result);
@@ -55,6 +64,14 @@ public class AuthController : BaseController
         DeleteTokenCookie();
         DeleteTokenCookie(true);
         return Ok(logoutResult);
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<ConfirmationUserEmailCommand.ConfirmationUserEmailResponse>> VerifyEmail(
+        [FromQuery] ConfirmationUserEmailCommand.ConfirmationUserEmailRequest request)
+    {
+        var result = await _mediator.Send(request);
+        return Ok(result);
     }
     
     private void SetTokenCookie(string token, bool isRefreshToken = false)

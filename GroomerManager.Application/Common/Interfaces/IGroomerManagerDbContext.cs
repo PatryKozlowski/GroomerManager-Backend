@@ -5,8 +5,9 @@ namespace GroomerManager.Application.Common.Interfaces;
 
 public interface IGroomerManagerDbContext
 {
-    DbSet<User> Users { get; set; }
+    DbSet<Domain.Entities.User> Users { get; set; }
     DbSet<Role> Roles { get; set; }
+    DbSet<EmailVerification> EmailVerifications { get; set; }
     DbSet<RefreshToken> RefreshTokens { get; set; }
     DbSet<Domain.Entities.Client> Clients { get; set; }
     DbSet<Domain.Entities.Salon> Salons { get; set; }
